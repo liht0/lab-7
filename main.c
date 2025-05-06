@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <>
 
-
 struct humen{
 
 	char * name;
