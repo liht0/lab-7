@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 struct humen{
 	char * name;
 	char * surname;
