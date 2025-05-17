@@ -1,41 +1,50 @@
 #include <stdio.h>
-struct humen{
-	char * name;
-	char * surname;
-	char * fname;	
-	int age;
-};
-int main(){
-	int N = 5; 
-	struct humen h1[N], h2[N];
-	FILE *input;
-	char s1[30], s2[30], s3[30];
-	int year;
-	
-	input = fopen("input.txt", "r");
-	
-	while(fscanf(input, "%s %s %s %d", h1[i].name, h1[i].surname, h1[i].fname, &h1[i].age) != EOF){
-		printf("%s %s %s %d", h1[i].name, h1[i].surname, h1[i].fname, &h1[i].age);
-		i++;
-}
-	for (i=0, i<N, i++){
-	h2[i] = h1[i]
-	}
-	
-	int j; 
-	struct humen temp;
-	for (i=0, i<N-1, i++){
-		for (j=0, j<N-i-1, j++){
-			if (h2[j].year > h2[j+1].year){
-				temp = h2[j+1];
-				h2[j+1] = h2[j];
-				h2[j] = temp;
+#include <string.h>
+
+typedef struct humen {
+    char name[50];
+    char sname[50];
+    int year;
+    
+} humen;
+
+void sort(humen arg[], int n) {
+    int i, j;
+    humen temp;
+    for (i = 0; i < n-1; i++) {
+        for (j = 0; j < n-i-1; j++) {
+            if (arg[j].year > arg[j+1].year) {
+                temp = arg[j];
+                arg[j] = arg[j+1];
+                arg[j+1] = temp;
 }
 }
 }
-	printf("H2 : \n");
-	for (i=0, i<N, i++){
-		printf("%s %s %s %d \n", h1[i].name, h1[i].surname, h1[i].fname, &h1[i].age);
-	fclose(input);
-	return 0;
+}
+
+int main() {
+	int i;
+    humen arg1[4], arg2[4];
+    
+    printf("vvedite dannie dlia 4 chelovek:\n");
+    for (i = 0; i < 4; i++) {
+        printf("Human %d:\n", i+1);
+        printf("Imia: ");
+        scanf("%s", arg1[i].name);
+        printf("Familia: \n");
+        scanf("%s", arg1[i].sname);
+        printf("year of burth: \n");
+        scanf("%d", &arg1[i].year);
+        
+}
+    
+    memcpy(arg2, arg1, sizeof(arg1));
+    
+    sort(arg2, 4);
+    
+    printf("\nOtsotirovannii spisok: \n");
+    for (i = 0; i < 4; i++) {
+        printf("%s %s (%d y.o.)\n", arg2[i].sname, arg2[i].name, arg2[i].year);
+}
+    return 0;
 }
