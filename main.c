@@ -21,7 +21,6 @@ void sort(humen arg[], int n) {
 }
 }
 }
-
 int main() {
 	int i;
     humen arg1[4], arg2[4];
@@ -37,7 +36,7 @@ int main() {
         scanf("%d", &arg1[i].year);
         
 }
-    
+   
     memcpy(arg2, arg1, sizeof(arg1));
     
     sort(arg2, 4);
